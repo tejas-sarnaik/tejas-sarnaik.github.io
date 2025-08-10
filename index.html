@@ -77,12 +77,14 @@
             padding: 0 2rem;
         }
 
-        .logo img {
-    height: 40px;           /* Adjust for your navbar height */
-    width: auto;            /* Keep image proportions */
-    display: block;         /* Removes extra spacing */
-}
-
+       .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
         .nav-links {
             display: flex;
@@ -590,10 +592,7 @@
     
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">
-                <img src="./images/logo_image_ts.png" alt="Tejas Sarnaik Logo">
-            </div>
-
+            <div class="logo">Tejas Sarnaik</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
