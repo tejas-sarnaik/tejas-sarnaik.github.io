@@ -16,7 +16,7 @@ Currently, I’m exploring the **intersection of AI, Blockchain, and Cloud Compu
 
 ✨ Highlights:  
 - 🔹 **20+ Projects Completed**  
-- 🔹 **2+ Years of Experience**  
+- 🔹 **3+ Years of Experience**  
 - 🔹 **50+ Technologies Mastered**  
 
 ---
