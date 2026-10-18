@@ -611,7 +611,7 @@
                 <img src="./images/image_new_change.jpg" alt="Tejas Sarnaik" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
             </div>
             <h1>Tejas Sarnaik</h1>
-            <p class="subtitle">Full Stack Developer & <span class="typing-text">NLP, GenAI & Cloud Solutions Engineer</span></p>
+            <p class="subtitle">Software Research Engineer & <span class="typing-text">NLP, GenAI & Cloud Solutions Engineer</span></p>
             <p style="color: var(--text-secondary); font-size: 1.1rem; margin: 1rem 0;">
                 Transforming ideas into scalable digital solutions with cutting-edge technology
             </p>
@@ -898,6 +898,62 @@
     </footer>
 
     <script>
+
+        // Typing animation
+        const typingText = document.querySelector('.typing-text');
+        const phrases = [
+        'NLP & LLM Research Engineer',
+        'Machine Learning Engineer',
+        'Knowledge Graph RAG Engineer',
+        'Cloud & Software Systems Engineer'
+        ];
+        
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        
+        function typeAnimation() {
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingText.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingText.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+            
+            let typeSpeed = isDeleting ? 50 : 100;
+            
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeAnimation, typeSpeed);
+        }
+        
+        // Start typing animation
+        typeAnimation();
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+        
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -923,7 +979,7 @@
         });
 
         // Typing animation
-        const typingText = document.querySelector('.typing-text');
+        const typingText = document.querySelector('.');
         const phrases = [
             'AI Innovation Architect',
             'Full Stack Developer',
